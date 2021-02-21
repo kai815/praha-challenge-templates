@@ -8,7 +8,7 @@ export const filterNumberMax = (numbers: number[]): number => {
   }
   return Math.max(...numbers);
 };
-
+// 2つめ
 export const returnStringAfterSeconds = (
   value: string,
   seconds: number
@@ -20,6 +20,7 @@ export const returnStringAfterSeconds = (
   });
 };
 
+// 3つめ
 export class CreditCarfApiService {
   private NUMBER_MIN_LENGTH = 14;
   private NUMBER_MAX_LENGTH = 16;
