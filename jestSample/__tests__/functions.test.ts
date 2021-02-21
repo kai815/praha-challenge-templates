@@ -6,6 +6,9 @@ import {
 } from "../functions";
 import { DatabaseMock } from "../util";
 import { NameApiService } from "../nameApiService";
+import axios from "axios";
+jest.mock("axios");
+const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe("sumOfArray", (): void => {
   // normal number
@@ -131,7 +134,11 @@ describe("asyncSumOfArraySometimesZero", (): void => {
 });
 
 describe("getFirstNameThrowIfLong", (): void => {
-  const nameApiService = new NameApiService();
+  //ここはapiのレスポンスに合わせて
+  // eslint-disable-next-line @typescript-eslint/camelcase
+  const response = { data: { first_name: "HIDE" } };
+  mockedAxios.get.mockResolvedValue(response);
+  const nameApiService = new NameApiService(mockedAxios);
   nameApiService.getFirstName = jest.fn(
     (): Promise<string> => {
       return new Promise((resolve): void => {
