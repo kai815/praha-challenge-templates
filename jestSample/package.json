@@ -4,6 +4,7 @@
     "build": "tsc",
     "test": "jest",
     "test-w": "jest --watch",
+    "test-wa": "jest --watchAll",
     "lint": "eslint"
   },
   "dependencies": {
