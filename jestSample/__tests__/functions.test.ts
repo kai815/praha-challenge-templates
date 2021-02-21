@@ -53,8 +53,8 @@ describe("asyncSumOfArray", (): void => {
     const data = await asyncSumOfArray([1, 2, 3, 4, 5, 0.5]);
     expect(data).toBe(15.5);
   });
-  // exception
-  it("input [] throw Exception", async (): Promise<void> => {
+  // []
+  it("input [] output 0", async (): Promise<void> => {
     expect.assertions(1);
     const data = await asyncSumOfArray([]);
     expect(data).toBe(0);
