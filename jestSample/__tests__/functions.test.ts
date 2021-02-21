@@ -37,23 +37,27 @@ describe("sumOfArray", (): void => {
 describe("asyncSumOfArray", (): void => {
   // normal number
   it("input [1,1] output 2", async (): Promise<void> => {
+    expect.assertions(1);
     const data = await asyncSumOfArray([1, 1]);
     expect(data).toBe(2);
   });
 
   // inucluding -
   it("input [1,2,3,4,5,-6] output 9", async (): Promise<void> => {
+    expect.assertions(1);
     const data = await asyncSumOfArray([1, 2, 3, 4, 5, -6]);
     expect(data).toBe(9);
   });
 
   // including decimal
   it("input [1,2,3,4,5,0.5] output 15.5", async (): Promise<void> => {
+    expect.assertions(1);
     const data = await asyncSumOfArray([1, 2, 3, 4, 5, 0.5]);
     expect(data).toBe(15.5);
   });
   // exception
   it("input [] throw Exception", (): void => {
+    expect.assertions(1);
     expect(asyncSumOfArray([])).rejects.toThrow();
   });
   // exception
@@ -65,11 +69,13 @@ describe("asyncSumOfArraySometimesZero", (): void => {
     databaseNormal.save = jest.fn();
     // normal number
     it("input [1,1] output 2", async (): Promise<void> => {
+      expect.assertions(1);
       const data = await asyncSumOfArraySometimesZero(databaseNormal, [1, 1]);
       expect(data).toBe(2);
     });
     // inucluding -
     it("input [1,2,3,4,5,-6] output 9", async (): Promise<void> => {
+      expect.assertions(1);
       const data = await asyncSumOfArraySometimesZero(databaseNormal, [
         1,
         2,
@@ -83,6 +89,7 @@ describe("asyncSumOfArraySometimesZero", (): void => {
 
     // including decimal
     it("input [1,2,3,4,5,0.5] output 15.5", async (): Promise<void> => {
+      expect.assertions(1);
       const data = await asyncSumOfArraySometimesZero(databaseNormal, [
         1,
         2,
@@ -102,11 +109,13 @@ describe("asyncSumOfArraySometimesZero", (): void => {
     });
     // normal number
     it("input [1,1] output 0", async (): Promise<void> => {
+      expect.assertions(1);
       const data = await asyncSumOfArraySometimesZero(databaseNormal, [1, 1]);
       expect(data).toBe(0);
     });
     // inucluding -
     it("input [1,2,3,4,5,-6] output 0", async (): Promise<void> => {
+      expect.assertions(1);
       const data = await asyncSumOfArraySometimesZero(databaseNormal, [
         1,
         2,
@@ -120,6 +129,7 @@ describe("asyncSumOfArraySometimesZero", (): void => {
 
     // including decimal
     it("input [1,2,3,4,5,0.5] output 0", async (): Promise<void> => {
+      expect.assertions(1);
       const data = await asyncSumOfArraySometimesZero(databaseNormal, [
         1,
         2,
@@ -150,6 +160,7 @@ describe("getFirstNameThrowIfLong", (): void => {
   it("if maxNameLength more than firstNameLength return 'HIDE'", async (): Promise<
     void
   > => {
+    expect.assertions(1);
     const data = await getFirstNameThrowIfLong(nameApiService, 5);
     expect(data).toBe("HIDE");
   });
@@ -157,6 +168,7 @@ describe("getFirstNameThrowIfLong", (): void => {
   it("if maxNameLength less than firstNameLength throw error", async (): Promise<
     void
   > => {
+    expect.assertions(1);
     expect(
       async (): Promise<void> => {
         await getFirstNameThrowIfLong(nameApiService, 2);
