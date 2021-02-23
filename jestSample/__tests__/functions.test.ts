@@ -56,9 +56,9 @@ describe("asyncSumOfArray", (): void => {
     expect(data).toBe(15.5);
   });
   // exception
-  it("input [] throw Exception", (): void => {
+  it("input [] throw Exception", (): Promise<void> => {
     expect.assertions(1);
-    expect(asyncSumOfArray([])).rejects.toThrow();
+    return expect(asyncSumOfArray([])).rejects.toThrow();
   });
   // exception
 });
@@ -161,7 +161,8 @@ describe("getFirstNameThrowIfLong", (): void => {
     void
   > => {
     expect.assertions(1);
-    const data = await getFirstNameThrowIfLong(nameApiService, 5);
+    const maxNameLength = 5
+    const data = await getFirstNameThrowIfLong(nameApiService, maxNameLength);
     expect(data).toBe("HIDE");
   });
 
@@ -169,9 +170,10 @@ describe("getFirstNameThrowIfLong", (): void => {
     void
   > => {
     expect.assertions(1);
+    const maxNameLength = 2
     expect(
       async (): Promise<void> => {
-        await getFirstNameThrowIfLong(nameApiService, 2);
+        await getFirstNameThrowIfLong(nameApiService, maxNameLength);
       }
     ).rejects.toThrow("first_name too long");
   });
