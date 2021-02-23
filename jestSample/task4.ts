@@ -39,7 +39,7 @@ export class CreditCarfApiService {
       throw new Error("cardNumber is too short!");
     }
     if (cardNumber.length > this.NUMBER_MAX_LENGTH) {
-      throw new Error("cardNumber is too short!");
+      throw new Error("cardNumber is too long!");
     }
     if (!cardNumber.includes("-")) {
       throw new Error("cardNumber not including '-'!");
