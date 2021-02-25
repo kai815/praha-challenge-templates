@@ -5,7 +5,7 @@ jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe("NameApiService", (): void => {
-  it("if getFirstName less than response first_name, return firstName", async (): Promise<
+  it("if getFirstName less than MAXLENGTH, return firstName", async (): Promise<
     void
   > => {
     // 「first_name」はapiのレスポンスに合わせてcamelじゃない
@@ -13,9 +13,9 @@ describe("NameApiService", (): void => {
     const response = { data: { first_name: "HIDE" } };
     mockedAxios.get.mockResolvedValue(response);
     const nameApiService = new NameApiService(mockedAxios);
-    expect(await nameApiService.getFirstName()).toBe("HIDE");
+    await expect(nameApiService.getFirstName()).resolves.toBe("HIDE");
   });
-  it("if getFirstName more than response first_name, throw Error", async (): Promise<
+  it("if getFirstName more than MAXLENGTH, throw Error", async (): Promise<
     void
   > => {
     // 「first_name」はapiのレスポンスに合わせてcamelじゃない
