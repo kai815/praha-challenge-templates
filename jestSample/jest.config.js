@@ -6,5 +6,6 @@ module.exports = {
     "**/functions.ts",
     "**/nameApiService.ts",
     "**/quiz.ts",
+    "**/task4.ts",
   ],
 };
