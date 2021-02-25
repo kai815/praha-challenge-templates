@@ -1,8 +1,8 @@
 import axios from "axios";
 // No.1
-export const greet = (hour: number, name: string): string => {
+export const greet = (date: Date, name: string): string => {
   // DIしていいのかな
-  // const hour = new Date().getHours();
+  const hour = date.getHours();
   const greetMessage = hour >= 6 && hour < 12 ? "Good morning" : "Hello";
   return `${greetMessage} ${name}!`;
 };

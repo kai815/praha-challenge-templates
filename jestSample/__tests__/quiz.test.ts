@@ -6,17 +6,23 @@ const mockedAxios = axios as jest.Mocked<typeof axios>;
 //No1の解答
 describe("greet", (): void => {
   it("時間が6時より遅くて12時より早い時は朝の挨拶", (): void => {
-    const hour = 8;
+    const date = new Date();
+    date.getHours = jest.fn((): number => {
+      return 8;
+    });
     const name = "Hideo";
     const morningGreet = `Good morning ${name}!`;
-    expect(greet(hour, name)).toBe(morningGreet);
+    expect(greet(date, name)).toBe(morningGreet);
   });
 
   it("時間が12時より遅い6時より早い時は日中？の挨拶", (): void => {
-    const hour = 13;
+    const date = new Date();
+    date.getHours = jest.fn((): number => {
+      return 13;
+    });
     const name = "Hideo";
     const daytimieGreet = `Hello ${name}!`;
-    expect(greet(hour, name)).toBe(daytimieGreet);
+    expect(greet(date, name)).toBe(daytimieGreet);
   });
 });
 
