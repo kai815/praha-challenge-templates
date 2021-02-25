@@ -26,11 +26,9 @@ describe("sumOfArray", (): void => {
     expect(sumOfArray([1, 2, 3, 4, 5, 0.5])).toBe(15.5);
   });
 
-  // exception
-  it("input [] throw Exception", (): void => {
-    expect((): void => {
-      sumOfArray([]);
-    }).toThrow();
+  // []
+  it("input [] output 0", (): void => {
+    expect(sumOfArray([])).toBe(0);
   });
 });
 
@@ -55,12 +53,17 @@ describe("asyncSumOfArray", (): void => {
     const data = await asyncSumOfArray([1, 2, 3, 4, 5, 0.5]);
     expect(data).toBe(15.5);
   });
-  // exception
-  it("input [] throw Exception", (): Promise<void> => {
+  // []
+  it("input [] output 0", async (): Promise<void> => {
     expect.assertions(1);
-    return expect(asyncSumOfArray([])).rejects.toThrow();
-  });
+    const data = await asyncSumOfArray([]);
+    expect(data).toBe(0)
   // exception
+  // it("input [] throw Exception", (): Promise<void> => {
+    // expect.assertions(1);
+    // return expect(asyncSumOfArray([])).rejects.toThrow();
+  // });
+  
 });
 
 describe("asyncSumOfArraySometimesZero", (): void => {
