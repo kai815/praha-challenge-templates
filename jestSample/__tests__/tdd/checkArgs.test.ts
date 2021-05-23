@@ -11,4 +11,11 @@ describe("checkArgs関数のテスト", (): void => {
       checkArgs(...thirtyOneLength);
     }).toThrow("引数を指定できるのは30個までです。");
   });
+
+  //tsの場合は型をしっかり定義しておけばいらない
+  // it("「テスト」を引数に渡すとエラーになる", (): void => {
+  //   expect((): void => {
+  //     checkArgs("テスト");
+  //   }).toThrow("引数を指定できるのは数字です。");
+  // });
 });
