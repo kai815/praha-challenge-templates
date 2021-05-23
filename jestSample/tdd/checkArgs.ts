@@ -1,3 +1,4 @@
-export const checkArgs = (): void => {
-  // 空の関数
+export const checkArgs = (...args: number[]): boolean => {
+  console.log(args);
+  return true;
 };
