@@ -11,6 +11,6 @@ describe("add関数のテスト", (): void => {
   });
 
   it("1000,1,2 を引数に渡すと「too big」が返ってくる", (): void => {
-    expect(add(1000, 1, 2)).toBe("too big");
+    expect(add(998, 1, 2)).toBe("too big");
   });
 });
