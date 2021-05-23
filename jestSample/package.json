@@ -5,7 +5,7 @@
     "test": "jest",
     "test-w": "jest --watch",
     "test-wa": "jest --watchAll",
-    "test-tdd-subject": "jest --watchAll __tests__/tdd/**.ts",
+    "test-tdd-subject": "jest --watchAll __tests__/tdd/**.test.ts",
     "lint": "eslint"
   },
   "dependencies": {
