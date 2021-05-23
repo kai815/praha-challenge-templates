@@ -8,7 +8,7 @@ describe("checkArgs関数のテスト", (): void => {
 
   it("1と31個を引数に渡すとエラーになる", (): void => {
     expect(checkArgs(...thirtyOneLength)).toThrow(
-      "引数をしているできるのは30個までです。"
+      "引数を指定できるのは30個までです。"
     );
   });
 });
