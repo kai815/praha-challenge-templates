@@ -1,4 +1,4 @@
-export const parseArgs = (...processArgs: string[]): (number | undefined)[] => {
+export const parseArgs = (...processArgs: string[]): number[] => {
   return processArgs
     .filter(
       (arg: string, index: number): boolean =>
