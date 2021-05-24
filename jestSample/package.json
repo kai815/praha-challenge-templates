@@ -6,7 +6,11 @@
     "test-w": "jest --watch",
     "test-wa": "jest --watchAll",
     "test-tdd-subject": "jest --watchAll __tests__/tdd/**.test.ts",
-    "lint": "eslint"
+    "lint": "eslint",
+    "add-exce":" ts-node tdd/add.ts 3 10 3 テスト",
+    "subtract-exce":" ts-node tdd/substract.ts 10 3 2 テスト",
+    "multiply-exce":" ts-node tdd/multiply.ts 1 10 2 テスト",
+    "divide-exce":" ts-node tdd/divide.ts 10 5 テスト"
   },
   "dependencies": {
     "@types/jest": "^26.0.15",
