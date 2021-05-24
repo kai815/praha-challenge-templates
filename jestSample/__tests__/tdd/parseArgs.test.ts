@@ -1,6 +1,6 @@
 import { parseArgs } from "../../tdd/parseArgs";
 
-describe("add関数のテスト", (): void => {
+describe("parse関数のテスト", (): void => {
   it("['1','2','3']を渡した時に 3 のみ返ってくる", (): void => {
     expect(parseArgs("1", "2", "3")).toStrictEqual([3]);
   });

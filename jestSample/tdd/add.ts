@@ -1,7 +1,6 @@
 import { checkArgs } from "./checkArgs";
 import { parseArgs } from "./parseArgs";
 
-const parsedArggs = parseArgs(...process.argv);
 export const add = (...args: number[]): number | void | string => {
   if (checkArgs(...args)) {
     const result = args.reduce(
@@ -10,5 +9,9 @@ export const add = (...args: number[]): number | void | string => {
     return result > 1000 ? "too big" : result;
   }
 };
-const result = add(...parsedArggs);
-console.log(result);
+
+if (process.env.NODE_ENV !== "test") {
+  const parsedArggs = parseArgs(...process.argv);
+  const result = add(...parsedArggs);
+  console.log(result);
+}

@@ -1,7 +1,6 @@
 import { checkArgs } from "./checkArgs";
 import { parseArgs } from "./parseArgs";
 
-const parsedArggs = parseArgs(...process.argv);
 export const divide = (...args: number[]): number | void | string => {
   if (checkArgs(...args)) {
     return args.reduce(
@@ -10,6 +9,8 @@ export const divide = (...args: number[]): number | void | string => {
     );
   }
 };
-
-const result = divide(...parsedArggs);
-console.log(result);
+if (process.env.NODE_ENV !== "test") {
+  const parsedArggs = parseArgs(...process.argv);
+  const result = divide(...parsedArggs);
+  console.log(result);
+}
