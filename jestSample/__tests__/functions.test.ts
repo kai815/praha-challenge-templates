@@ -63,7 +63,7 @@ describe("asyncSumOfArray", (): void => {
     // expect.assertions(1);
     // return expect(asyncSumOfArray([])).rejects.toThrow();
   // });
-  
+  });
 });
 
 describe("asyncSumOfArraySometimesZero", (): void => {
